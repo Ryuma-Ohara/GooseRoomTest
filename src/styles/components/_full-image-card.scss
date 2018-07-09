@@ -1,0 +1,57 @@
+// FUllImageCard
+.list-item {
+  margin-bottom: 20px;
+  padding: 0 20px; 
+}
+.full-image-list {
+  margin-bottom: 20px; // delete  
+  li {
+    list-style-type: none;
+  }  
+}
+@media all and (min-width: 768px) {
+.full-image-list {
+  display: flex;
+  li {
+    width: 30%;
+  }
+} 
+}
+.information-box {
+  display: flex;
+  margin-top: 3px;
+  padding: 5px 10px;
+  border: 1px solid $light-gray;
+  .left {
+    flex: 1;
+    .location {
+      word-break: break-all;
+    }
+    .fee {
+      font-size: 18px;
+    }
+  }
+  .right {
+    flex: 1;
+  }
+}
+
+.icons-list {
+  display: flex;
+  flex-wrap: wrap;
+  li {
+    margin: 5px;
+  }
+}
+
+.image-wrapper {
+  display: flex;
+  justify-content: center;    
+}
+.image-icon {
+  width: 20px;
+  height: 20px;
+}
+.image-icon.selected {
+  background-color: red;   
+}

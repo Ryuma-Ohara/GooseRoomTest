@@ -1,0 +1,41 @@
+// AccordionBox
+.accordion-wrapper {
+  width: 300px;
+  margin: 0 auto;
+  .accordion-header {
+    margin: 2px;
+    padding: 10px 0;
+    border: 3px solid lightblue;
+    text-align: center;
+    cursor: pointer;
+  }
+  .button {
+    font-size: 18px;
+    color: #2f70e1;
+    padding: 10px 30px; 
+    box-shadow:	0px 1px 3px 0px rgba(0, 0, 0, .3);
+    text-align: center;
+  }
+  .button:first-of-type {
+    margin-bottom: 15px;
+  }
+  .toggled + div {
+	  display: block;
+  }
+  .accordion-wrapper p {
+    margin-top: 10px;
+    padding: 0 10px;
+  }
+  .hide {
+    display: none
+  }
+}
+
+// list-icons
+.list-icons li {
+  display: inline-block;
+  margin: 5px;
+  img {
+    margin-right: 3px
+  }  
+}

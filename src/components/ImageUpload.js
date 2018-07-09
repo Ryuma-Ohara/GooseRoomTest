@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import '../styles/common.scss'
 
 class ImageUpload extends Component {
   constructor(props) {
@@ -40,7 +41,7 @@ class ImageUpload extends Component {
     }
 
     return (
-      <div>
+      <div className="image-uploader">
         <form onSubmit={this._handleSubmit}>
           <input type="file" onChange={this._handleImageChange} />
           <button type="submit" onClick={this._handleSubmit}>Upload Image</button>

@@ -1,12 +1,13 @@
 const MODE = 'development'
 const enableSourceMap = (MODE === 'development')
+const path = require('path')
 
 module.exports = {
   mode: MODE,
-  entry: './src/main.js',
+  entry: './src/app.js',
   output: {
-    path: `${__dirname}/dist`,
-    filename: 'main.js'
+    path: path.join(__dirname, 'public'),
+    filename: 'bundle.js'
   },
   module: {
     rules: [
@@ -26,7 +27,7 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.scss/,
+        test: /\.s?css$/,
         use: [
           'style-loader',
           {
@@ -46,12 +47,21 @@ module.exports = {
           }
 
         ]
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {}  
+          }
+        ]
       }
+
     ]
   },
 
   devServer: {
-    contentBase: "dist",
-    open: true
+    contentBase: path.join(__dirname, 'public')
   }
 };
