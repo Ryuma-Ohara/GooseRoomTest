@@ -52,4 +52,4 @@ class ImageUpload extends Component {
   }
 }
 
-export default ImageUpload;
+export default ImageUpload

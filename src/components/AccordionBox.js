@@ -18,7 +18,7 @@ class AccordionBox extends React.Component {
 
   render () {
     return (
-      <div className="accordion-wrapper">
+      <div className="accordion-wrapper map">
         <AccordionBoxChild 
         className={ this.state.condition ? "button toggled" : "button" }
         toggleClassName={ this.handleClick }
@@ -46,5 +46,5 @@ class AccordionBoxChild extends React.Component {
   }
 }
 
-export default AccordionBox;
+export default AccordionBox
 

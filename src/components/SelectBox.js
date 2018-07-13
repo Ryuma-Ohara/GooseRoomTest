@@ -16,4 +16,4 @@ class SelectBox extends React.Component {
   }
 }
 
-export default SelectBox;
+export default SelectBox

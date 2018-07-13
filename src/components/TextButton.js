@@ -17,4 +17,4 @@ const TextButton = () => {
   );
 }
 
-export default TextButton;
+export default TextButton

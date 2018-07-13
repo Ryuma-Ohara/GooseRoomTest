@@ -74,5 +74,5 @@ class AccordionIconChild extends React.Component {
   }
 }
 
-export default AccordionIcon;
+export default AccordionIcon
 

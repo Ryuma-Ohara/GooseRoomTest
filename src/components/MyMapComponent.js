@@ -1,5 +1,5 @@
 import React from "react"
-import { compose, withProps } from "recompose"
+import { compose, withProps,withHandlers } from "recompose"
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 
 const MyMapComponent = compose(
@@ -9,20 +9,24 @@ const MyMapComponent = compose(
     containerElement: <div style={{ height: `400px` }} />,
     mapElement: <div style={{ height: `100%` }} />,
   }),
+  withHandlers({
+    onMarkerClick: () => () => {
+      document.location.href = "http://localhost:8080/detail"
+      console.log(props)
+    },
+  }),
   withScriptjs,
   withGoogleMap
-)((props) =>
+)((props) => 
   <GoogleMap
     defaultZoom={8}
     defaultCenter={{ lat: 49.283, lng: -123.120 }}
   >
-    {props.isMarkerShown && <Marker position={{ lat: 49.283, lng: -123.120 }} 
-      onClick={props.onMarkerClick}
+    {props.isMarkerShown && <Marker position={{ lat: 49.283, lng: -123.120 }} onClick={props.onMarkerClick}
      />}
-    {props.isMarkerShown && <Marker position={{ lat: 49, lng: -123.120 }} 
-      onClick={props.onMarkerClick} 
+    {props.isMarkerShown && <Marker position={{ lat: 49, lng: -123.120 }} onClick={props.onMarkerClick}
     />}
   </GoogleMap>
 )
 
-export default MyMapComponent;
+export default MyMapComponent

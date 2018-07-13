@@ -56,12 +56,30 @@ module.exports = {
             options: {}  
           }
         ]
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          "babel-loader",
+          {
+            loader: "react-svg-loader",
+            options: {
+              svgo: {
+                plugins: [
+                  { removeTitle: false }
+                ],
+                floatPrecision: 2
+              }
+            }
+          }
+        ]
       }
 
     ]
   },
 
   devServer: {
-    contentBase: path.join(__dirname, 'public')
+    contentBase: path.join(__dirname, 'public'),
+    historyApiFallback: true
   }
 };

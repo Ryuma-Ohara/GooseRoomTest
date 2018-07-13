@@ -20,4 +20,4 @@ const ImageCard = () => {
   ); 
 }
 
-export default ImageCard;
+export default ImageCard

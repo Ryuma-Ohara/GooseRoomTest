@@ -1,18 +1,23 @@
 // Header  
 .header-top { 
   position: relative;
-  padding: 20px 0;
+  padding: 14px 0 12px;
 }
 
 // Logo
 .logo {
   text-align: center;
 }
+.logo-image {
+  width: 80px;
+  height: 50px;
+  fill: #ee5511;
+}
 
 // MenuButton
 #nav-drawer{ 
   position: absolute;
-  top: 20px;
+  top: 24px;
   right: 15px;
   .nav-unshown { 
     display: none
@@ -66,7 +71,12 @@
     transform: translateX(105%);
   }
 }
-  
+@media all and (min-width: 768px) {
+  #nav-drawer{
+    right: 31px;
+  }
+} 
+
 #nav-input:checked ~ #nav-close {
   display: block;
   opacity: .5;
@@ -88,5 +98,8 @@
     padding: 10px 0;
     border-bottom: 1px dashed $light-gray;
     list-style-type: none;
+    .is-active {
+      font-weight: bold;
+    }
   }
 }
